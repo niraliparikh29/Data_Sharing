@@ -1,0 +1,50 @@
+<div class="col-md-6">
+    <h2 class="text-center">Contact Us </h2>
+    <form [formGroup]="addUser">
+        <div class="form-group">
+            <label for="name">Name </label>
+            <input type="name" formControlName="name" placeholder="name" name="name" class="form-control" id="name">
+            <div *ngIf="addUser.controls['name'].invalid && (addUser.controls['name'].dirty || addUser.controls['name'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="addUser.controls['name'].errors.required">
+                    Name is required.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input formControlName="email" placeholder="email" name="email" class="form-control" id="email">
+            <div *ngIf="addUser.controls['email'].invalid && (addUser.controls['email'].dirty || addUser.controls['email'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="addUser.controls['email'].errors.required">
+                    Email is required.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="age">age:</label>
+            <input formControlName="age" placeholder="age" name="age" class="form-control" id="age">
+            <div *ngIf="addUser.controls['age'].invalid && (addUser.controls['age'].dirty || addUser.controls['age'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="addUser.controls['age'].errors.required">
+                    age is required.
+                </div>
+            </div>
+        </div>
+        <div class="form-group" [formGroup]="addUser">
+            <label for="message">message:</label>
+            <textarea formControlName="message" placeholder="message" name="message" class="form-control" id="message"> </textarea>
+            <div *ngIf="addUser.controls['message'].invalid && (addUser.controls['message'].dirty || addUser.controls['message'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="addUser.controls['message'].errors.required">
+                    message is required.
+                </div>
+                <div *ngIf="addUser.controls['message'].errors.maxLength">
+                    Message should not longer than 255 characters.
+                </div>
+            </div>
+         
+        </div>
+        <button class="btn btn-success" [disabled]="addUser.invalid">Add User</button>
+    </form>
+</div>

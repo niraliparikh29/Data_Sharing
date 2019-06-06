@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-sm bg-light">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLink="/company" class="nav-link" routerLinkActive="active">
+          Company
+        </a>
+      </li>
+      <li class="nav-item">
+          <a routerLink="/employee" class="nav-link" routerLinkActive="active">
+            Employee
+          </a>
+        </li>
+      <li class="nav-item">
+        <a routerLink="/user" class="nav-link" routerLinkActive="active">
+          Users
+        </a>
+      </li>
+      <li>
+        <a class="nav-link active" [class.active]="router.url === 'home'" data-toggle="tab" [routerLink]="['/home']">
+           home
+         </a>
+      </li> 
+      <li class="nav-item">
+        <a routerLink="/contact" class="nav-link" routerLinkActive="active">
+          Contact
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,16 @@
+<table  class="table table-bordered">
+  <thead>
+    <th> Id </th>
+    <th> Name </th>
+    <th> Salary </th>
+    <th> Age </th>
+  </thead>
+  <tbody>
+  <tr *ngFor = "let user of users">
+    <td>{{user.id}}</td>
+    <td>{{user.employee_name}}</td>
+    <td>{{user.employee_salary}}</td>
+    <td>{{user.employee_age}}</td>
+  </tr>
+</tbody>
+</table>

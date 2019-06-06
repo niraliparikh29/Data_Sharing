@@ -1,0 +1,36 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+  { 
+    path:'',
+    redirectTo:'home',
+    pathMatch:'full'
+  },
+  {
+    path: 'company',
+    loadChildren: './company/company/company.module#CompanyModule'
+  },
+  {
+    path: 'home',
+    loadChildren : './home/home.module#HomeModule'
+  },
+  {
+    path:'user',
+    loadChildren :'./users/users.module#UsersModule'
+  },
+  {
+    path: 'employee',
+    loadChildren: './company/employee/employee.module#EmployeeModule'
+  },
+  {
+    path:'contact',
+    loadChildren:'./contact/contact.module#ContactModule'
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
