@@ -19,15 +19,21 @@
                 <div *ngIf="addUser.controls['email'].errors.required">
                     Email is required.
                 </div>
+                <div *ngIf="addUser.controls['email'].errors.pattern">
+                        Please enter valid email
+                </div>
             </div>
         </div>
         <div class="form-group">
             <label for="age">age:</label>
-            <input formControlName="age" placeholder="age" name="age" class="form-control" id="age">
+            <input formControlName="age" placeholder="age" name="age" class="form-control" id="age" type="number">
             <div *ngIf="addUser.controls['age'].invalid && (addUser.controls['age'].dirty || addUser.controls['age'].touched)"
                 class="alert alert-danger">
                 <div *ngIf="addUser.controls['age'].errors.required">
                     age is required.
+                </div>
+                <div *ngIf="addUser.controls['age'].errors.pattern">
+                      Please enter valid age
                 </div>
             </div>
         </div>
@@ -39,11 +45,10 @@
                 <div *ngIf="addUser.controls['message'].errors.required">
                     message is required.
                 </div>
-                <div *ngIf="addUser.controls['message'].errors.maxLength">
+                <div *ngIf="addUser.controls['message'].maxLength">
                     Message should not longer than 255 characters.
                 </div>
             </div>
-         
         </div>
         <button class="btn btn-success" [disabled]="addUser.invalid">Add User</button>
     </form>

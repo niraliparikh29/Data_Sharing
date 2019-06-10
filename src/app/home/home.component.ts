@@ -7,14 +7,9 @@ import { Component, OnInit, Input,  } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  
-  @Input() public company: any;
-  @Input() public employee: any;
-  //company : any;
- 
   constructor() { }
-
-  ngOnInit() {
  
+  ngOnInit() {
+   
   }
 }

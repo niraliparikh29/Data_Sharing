@@ -20,10 +20,6 @@ const routes: Routes = [
     loadChildren :'./users/users.module#UsersModule'
   },
   {
-    path: 'employee',
-    loadChildren: './company/employee/employee.module#EmployeeModule'
-  },
-  {
     path:'contact',
     loadChildren:'./contact/contact.module#ContactModule'
   }

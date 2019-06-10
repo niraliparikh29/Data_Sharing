@@ -1,5 +1,2 @@
-<div>
-    Employee
-      <input type="text" name = "employee" id="employee"  [(ngModel)]="employee">
-    </div>
-  
+<label>Employee </label> &nbsp;
+<input type="text" #ccomponent (keyup)="onChange(ccomponent.value)" [(ngModel)] = "PData"/>

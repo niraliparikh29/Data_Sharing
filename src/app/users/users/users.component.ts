@@ -17,7 +17,7 @@ export class UsersComponent implements OnInit {
   //Call third party api to display the data
   public getUsers() {
     this.apis.listUsers().subscribe((data:any) => {
-      console.log("users",data)
+    
       this.users = data
     })
   }

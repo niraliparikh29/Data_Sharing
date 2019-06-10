@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'DemoTask';
-  host = '/home';
-  constructor(public router:Router) {
-    this.host=router.url
+  
+  constructor() {
+    
   }
 }

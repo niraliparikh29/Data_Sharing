@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-company',
@@ -7,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./company.component.css']
 })
 export class CompanyComponent implements OnInit {
-  company:any = "company"
+
+
+  public CData: number;
   constructor() { }
+
   ngOnInit() {
   }
-
-} 
+ 
+ } 

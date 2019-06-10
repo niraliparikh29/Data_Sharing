@@ -1,4 +1,4 @@
-<div>
-  Company 
-  <input type="text" name = "company" id="company" [(ngModel)]="company">
-</div>
+<label>Company </label> &nbsp;
+<input type="text" #pcomponent (keyup)="0" [(ngModel)] = "CData"/> 
+<br>
+<app-employee [PData]="pcomponent.value" (childEvent)="CData=$event"></app-employee>

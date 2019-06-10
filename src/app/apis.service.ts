@@ -8,7 +8,7 @@ export class ApisService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public listUsers(){
+  public listUsers() {
     return this.httpClient.get(`http://dummy.restapiexample.com/api/v1/employees`);
   }
 

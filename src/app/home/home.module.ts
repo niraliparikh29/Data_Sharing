@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CompanyComponent } from '../company/company/company.component';
 import { EmployeeComponent } from '../company/employee/employee.component';
 
@@ -20,6 +20,7 @@ const routes: Routes = [
     CommonModule,
     HomeRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ]
 })
