@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { CompanyRoutingModule } from './company-routing.module';
-import { CompanyComponent } from './company.component';
+import { CompanyRoutingModule } from './../company/company-routing.module';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { EmployeeComponent } from '../employee/employee.component';
+import { CompanyComponent } from './company/company.component';
+import { EmployeeComponent } from './employee/employee.component';
+
 
 const routes: Routes = [
   {
@@ -13,7 +15,7 @@ const routes: Routes = [
   },
   {
     path:'employee',
-    component :EmployeeComponent
+    component : EmployeeComponent
   }
 ];
 
