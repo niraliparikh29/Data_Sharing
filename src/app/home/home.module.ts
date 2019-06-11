@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CompanyComponent } from '../company/company/company.component';
-import { EmployeeComponent } from '../company/employee/employee.component';
+import { CompanyModule } from '../company/company.module';
 
 const routes: Routes = [
   {
@@ -15,12 +12,11 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  declarations: [HomeComponent,CompanyComponent,EmployeeComponent],
+  declarations: [HomeComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
+    CompanyModule,
     RouterModule.forChild(routes)
   ]
 })

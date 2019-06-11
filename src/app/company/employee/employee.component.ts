@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 export class EmployeeComponent implements OnInit {
 
 
-  @Input() PData: number;
+  @Input() compData: string;
   @Output() childEvent = new EventEmitter();
   constructor() { }
   onChange(value) {
@@ -16,6 +16,4 @@ export class EmployeeComponent implements OnInit {
 
   ngOnInit() {
   }
-
-
 }

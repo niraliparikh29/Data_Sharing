@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CompanyComponent implements OnInit {
 
 
-  public CData: number;
+  public empData: string;
   constructor() { }
 
   ngOnInit() {
