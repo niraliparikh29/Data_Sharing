@@ -19,7 +19,7 @@
               <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                   <div class="form-group">
                       <label>First Name</label>
-                      <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                      <input type="text" formControlName="firstName"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
                       <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                           <div *ngIf="f.firstName.errors.required">First Name is required</div>
                       </div>

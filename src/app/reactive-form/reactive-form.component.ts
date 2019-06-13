@@ -13,7 +13,7 @@ export class ReactiveFormComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
+      firstName: ['',Validators.required,{updateOn:'blur'}],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -21,6 +21,18 @@ export class ReactiveFormComponent implements OnInit {
   });
   }
 
+  // public changeMode()
+  // {
+  //   console.log("Calling")
+  //   const value = this.registerForm.get('firstName').value;
+  //   const newControl = new FormControl( 
+  //     value, {
+  //       updateOn:'submit',validators:[Validators.required] }
+      
+  //   );
+  //   this.registerForm.setControl('name',newControl);
+  //   console.log("Value",value)
+  // }
   get f() { return this.registerForm.controls; }
   // updateName() {
   //   this.name.setValue('Nirali');
@@ -37,3 +49,9 @@ export class ReactiveFormComponent implements OnInit {
 }
 
 }
+// this.forecastForm = new FormGroup({
+//   dateFormatted: new FormControl(this.forecast.dateFormatted, { validators: Validators.required, asyncValidators: [this.forecastValidators.existingDateValidator(this.forecast.dateFormatted)], updateOn: 'blur' }),
+//   temperatureC: new FormControl(this.forecast.temperatureC, [Validators.required]),
+//   temperatureF: new FormControl(this.forecast.temperatureF),
+//   summary: new FormControl(this.forecast.summary)
+// });

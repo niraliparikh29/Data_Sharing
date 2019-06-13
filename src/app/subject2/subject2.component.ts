@@ -16,7 +16,8 @@ export class Subject2Component implements OnInit {
   }
 
   newMessage() {
-    this.data.changeMessage("Hello from Sibling")
+    console.log("message in sibling",this.message)
+    this.data.changeMessage2("Hello from Sibling")
   }
 
 }

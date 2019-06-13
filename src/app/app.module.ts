@@ -9,12 +9,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { Subject2Component } from './subject2/subject2.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { DataPassingComponent } from './data-passing/data-passing.component';
+import { SubjectComponent } from './subject/subject.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SubjectComponent,
     Subject2Component,
-    ReactiveFormComponent,    
+    ReactiveFormComponent,
+    DataPassingComponent,    
   ],
   imports: [
     BrowserModule,

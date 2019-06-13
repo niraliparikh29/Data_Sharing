@@ -13,5 +13,8 @@ export class SubjectComponent implements OnInit {
   ngOnInit() {
     this.data.currentMessage.subscribe(message => this.message = message)
   }
-
+  newMessage() {
+    console.log("message in parent",this.message)
+    this.data.changeMessage("Hello from Subject")
+  }
 }
