@@ -11,13 +11,13 @@ export class UsersComponent implements OnInit {
   constructor(private apis : ApisService) { }
   users:any;
   ngOnInit() {
-    this.getUsers()
+    this.getUsers();
   }
 
   //Call third party api to display the data
   public getUsers() {
     this.apis.listUsers().subscribe((data:any) => {
-    
+      console.log("data",data)
       this.users = data
     })
   }

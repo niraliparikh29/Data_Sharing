@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { SubjectComponent } from './subject/subject.component';
 import { Subject2Component } from './subject2/subject2.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-import { DataPassingComponent } from './data-passing/data-passing.component';
+
+
 
 
 const routes: Routes = [
@@ -41,8 +42,8 @@ const routes: Routes = [
     component:ReactiveFormComponent
   },
   {
-    path:'dataPass',
-    component:DataPassingComponent
+    path:'userngrx',
+    loadChildren:'./user-ngrx/user-ngrx.module#UserNgrxModule'
   }
 ];
 

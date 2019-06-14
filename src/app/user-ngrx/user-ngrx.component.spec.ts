@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataPassingComponent } from './data-passing.component';
+import { UserNgrxComponent } from './user-ngrx.component';
 
-describe('DataPassingComponent', () => {
-  let component: DataPassingComponent;
-  let fixture: ComponentFixture<DataPassingComponent>;
+describe('UserNgrxComponent', () => {
+  let component: UserNgrxComponent;
+  let fixture: ComponentFixture<UserNgrxComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DataPassingComponent ]
+      declarations: [ UserNgrxComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataPassingComponent);
+    fixture = TestBed.createComponent(UserNgrxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

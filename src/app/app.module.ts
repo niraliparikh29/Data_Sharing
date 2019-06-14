@@ -6,19 +6,17 @@ import { AppComponent } from './app.component';
 import { ApisService } from './apis.service';
 import { FormsModule} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
 import { Subject2Component } from './subject2/subject2.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-import { DataPassingComponent } from './data-passing/data-passing.component';
 import { SubjectComponent } from './subject/subject.component';
-
+import { StoreModule } from '@ngrx/store';
+import { Reducer } from './store/user.reducer';
 @NgModule({
   declarations: [
     AppComponent,
     SubjectComponent,
     Subject2Component,
-    ReactiveFormComponent,
-    DataPassingComponent,    
+    ReactiveFormComponent,        
   ],
   imports: [
     BrowserModule,
@@ -26,6 +24,7 @@ import { SubjectComponent } from './subject/subject.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    StoreModule.forRoot({reducer:Reducer})
   ],
   providers: [HttpClient,ApisService],
   bootstrap: [AppComponent]
