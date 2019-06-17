@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as Selectors from './../store/user.selector';
+import { ContactState } from '../store/user.model';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-contact-ngrx',
   templateUrl: './contact-ngrx.component.html',
@@ -8,7 +10,8 @@ import * as Selectors from './../store/user.selector';
 })
 export class ContactNgrxComponent implements OnInit {
   data:any;
-  constructor(private store : Store<any>) { }
+  isData:boolean = false
+  constructor(private store : Store<ContactState>, private toastr: ToastrService) { }
 
   ngOnInit() {
    this.getData()
@@ -16,9 +19,17 @@ export class ContactNgrxComponent implements OnInit {
   getData()
   {
     this.store.select(Selectors.contactData).subscribe((response) => {
-      console.log("In ts file",response)
-      this.data = response
-      
+      if(response) {
+        this.isData = true
+        console.log("In ts file",response)
+        this.data = response
+      }
+      else
+      {
+        setTimeout(() => {
+          this.toastr.error('Something went wrong');
+        });
+      }
     })
   }
 }

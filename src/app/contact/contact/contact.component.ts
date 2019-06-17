@@ -35,6 +35,6 @@ export class ContactComponent implements OnInit {
   {
       console.log("adduser",this.addUser.value);
       this.store.dispatch(new Actions.save(this.addUser.value));
-      this.router.navigateByUrl('/contactngrx');
+     this.router.navigateByUrl('/contactngrx');
   }
 }

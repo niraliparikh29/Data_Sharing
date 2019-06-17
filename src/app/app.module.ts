@@ -9,10 +9,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Subject2Component } from './subject2/subject2.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { SubjectComponent } from './subject/subject.component';
+
 import { StoreModule } from '@ngrx/store';
 import { Reducer } from './store/user.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffect } from './store/user.effect';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,10 +28,12 @@ import { AppEffect } from './store/user.effect';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot(),
     StoreModule.forRoot({reducer:Reducer}),
     EffectsModule.forRoot([AppEffect]),
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [HttpClient,ApisService],
   bootstrap: [AppComponent]

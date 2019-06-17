@@ -45,10 +45,10 @@ const routes: Routes = [
     path:'userngrx',
     loadChildren:'./user-ngrx/user-ngrx.module#UserNgrxModule'
   },
-  // {
-  //   path:'contactngrx',
-  //   loadChildren:'./contact-ngrx/contact-ngrx.module#ContactNgrxModule'
-  // }
+  {
+    path:'contactngrx',
+    loadChildren:'./contact-ngrx/contact-ngrx.module#ContactNgrxModule'
+  }
 ];
 
 @NgModule({
