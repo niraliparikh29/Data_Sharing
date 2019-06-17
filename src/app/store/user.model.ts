@@ -12,3 +12,17 @@ export interface State {
     posts:IUser[];
     errMsg : string
 }
+
+export interface Contact {
+    age:Number;
+    email:String;
+    message:String;
+    name:String;
+}
+
+export interface ContactState {
+    loading: boolean;
+    failed:boolean;
+    data:Contact[];
+    errMsg : string
+}

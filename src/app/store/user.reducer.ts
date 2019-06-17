@@ -1,6 +1,6 @@
 import * as userModel from './user.model';
 import * as action$ from './user.actions';
-
+//Declaration of user ngrx
 const initialState:userModel.State = {
     loading:false,
     failed:false,
@@ -9,7 +9,15 @@ const initialState:userModel.State = {
     errMsg:""
 }
 
-export function Reducer (state = initialState, action:action$.allType) {
+//declaration of contact ngrx
+const firstState: userModel.ContactState = {
+    loading: false,
+    failed:false,
+    data:[],
+    errMsg : ""
+}
+
+export function Reducer (state = initialState, action:action$.allType,contactState = firstState) {
     console.log("In reducer => ",state)
 
     switch (action.type) {
@@ -38,6 +46,15 @@ export function Reducer (state = initialState, action:action$.allType) {
                 loading:false,
                 failed:true,
                 errMsg:'not found'
+            }
+        }
+
+        case action$.SAVE : {
+            return {
+                ...contactState,
+                loading:false,
+                failed:false,
+                data:action.payloadContact
             }
         }
     }

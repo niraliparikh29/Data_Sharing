@@ -13,6 +13,7 @@ import { StoreModule } from '@ngrx/store';
 import { Reducer } from './store/user.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffect } from './store/user.effect';
+
 @NgModule({
   declarations: [
     AppComponent,
