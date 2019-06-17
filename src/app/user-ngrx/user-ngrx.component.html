@@ -1,3 +1,18 @@
-<p>
-  user-ngrx works!
-</p>
+<button (click)= "getAllData()"  class = "btn btn-primary"> Get All User </button>
+
+<table  class="table table-bordered">
+  <thead *ngIf="display">
+    <th> Id </th>
+    <th> Name </th>
+    <th> Salary </th>
+    <th> Age </th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let arr of data">
+    <td>{{arr.id}}</td>
+    <td>{{arr.employee_name}}</td>
+    <td>{{arr.employee_salary}}</td>
+    <td>{{arr.employee_age}}</td>
+  </tr>
+</tbody>
+</table>

@@ -13,7 +13,11 @@ export class load implements Action {
 
 export class loadSuccess implements Action {
     readonly type = LOAD_SUCCESS;
-    constructor(public payload:dataFormat.IUser[]) { };
+    
+    constructor(public payload:dataFormat.IUser[]) {
+        console.log("In action",payload)
+     };
+    
 }
 
 export class loadFail implements Action {

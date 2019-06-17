@@ -15,9 +15,30 @@ export function Reducer (state = initialState, action:action$.allType) {
     switch (action.type) {
         case action$.LOAD : {
             return {
-                ... state 
+                ... state ,
+                loading:true,
+                failed:false,
+                errMsg:''
+            }
+        }
+
+        case action$.LOAD_SUCCESS: {
+            return {
+                ...state ,
+                loading:false,
+                failed:false,
+                posts:action.payload,
+                errMsg:''
+            }
+        }
+
+        case action$.LOAD_FAIL : {
+            return {
+                ...state,
+                loading:false,
+                failed:true,
+                errMsg:'not found'
             }
         }
     }
-
 }

@@ -11,6 +11,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { SubjectComponent } from './subject/subject.component';
 import { StoreModule } from '@ngrx/store';
 import { Reducer } from './store/user.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffect } from './store/user.effect';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,11 +22,12 @@ import { Reducer } from './store/user.reducer';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    StoreModule.forRoot({reducer:Reducer}),
+    EffectsModule.forRoot([AppEffect]),
+    AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({reducer:Reducer})
   ],
   providers: [HttpClient,ApisService],
   bootstrap: [AppComponent]
