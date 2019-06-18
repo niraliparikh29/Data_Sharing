@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import * as Actions from './../../store/user.actions';
 import { Router } from '@angular/router';
+import * as UserActions from './../../store/app.actions';
+import { Store } from '@ngrx/store';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -12,7 +12,7 @@ export class ContactComponent implements OnInit {
   addUser:FormGroup
   constructor(
     private fb: FormBuilder,
-    private store: Store<any>,
+    private store :Store<any>,
     private router: Router
   ) { }
 
@@ -33,8 +33,7 @@ export class ContactComponent implements OnInit {
 
   saveData()
   {
-      console.log("adduser",this.addUser.value);
-      this.store.dispatch(new Actions.save(this.addUser.value));
+     this.store.dispatch(new UserActions.save(this.addUser.value))
      this.router.navigateByUrl('/contactngrx');
   }
 }

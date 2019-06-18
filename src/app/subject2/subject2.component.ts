@@ -7,7 +7,7 @@ import { ApisService } from '../apis.service';
   styleUrls: ['./subject2.component.css']
 })
 export class Subject2Component implements OnInit {
-  message:string;
+  message: string;
 
   constructor(private data: ApisService) { }
 
@@ -16,7 +16,6 @@ export class Subject2Component implements OnInit {
   }
 
   newMessage() {
-    console.log("message in sibling",this.message)
     this.data.changeMessage2("Hello from Sibling")
   }
 

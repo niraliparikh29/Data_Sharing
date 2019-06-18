@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl ,FormGroup,Validators, FormBuilder} from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-reactive-form',
   templateUrl: './reactive-form.component.html',
@@ -13,12 +13,12 @@ export class ReactiveFormComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      firstName: ['',Validators.required],
+      firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-     
-  });
+
+    });
   }
 
   // public changeMode()
@@ -28,7 +28,7 @@ export class ReactiveFormComponent implements OnInit {
   //   const newControl = new FormControl( 
   //     value, {
   //       updateOn:'submit',validators:[Validators.required] }
-      
+
   //   );
   //   this.registerForm.setControl('name',newControl);
   //   console.log("Value",value)
@@ -39,15 +39,11 @@ export class ReactiveFormComponent implements OnInit {
   // }
   onSubmit() {
     this.submitted = true;
-
     // stop here if form is invalid
     if (this.registerForm.invalid) {
-        return;
+      return;
     }
-    console.log("Value",this.registerForm.value)
-   
-}
-
+  }
 }
 // this.forecastForm = new FormGroup({
 //   dateFormatted: new FormControl(this.forecast.dateFormatted, { validators: Validators.required, asyncValidators: [this.forecastValidators.existingDateValidator(this.forecast.dateFormatted)], updateOn: 'blur' }),

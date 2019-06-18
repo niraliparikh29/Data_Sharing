@@ -7,14 +7,13 @@ import { ApisService } from '../apis.service';
   styleUrls: ['./subject.component.css']
 })
 export class SubjectComponent implements OnInit {
-  message:string;
+  message: string;
   constructor(private data: ApisService) { }
 
   ngOnInit() {
     this.data.currentMessage.subscribe(message => this.message = message)
   }
   newMessage() {
-    console.log("message in parent",this.message)
     this.data.changeMessage("Hello from Subject")
   }
 }

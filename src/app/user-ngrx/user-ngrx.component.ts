@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as Actions from './../store/user.actions';
-import * as Selectors from './../store/user.selector';
-import { IUser } from './../store/user.model';
-
+import * as Selectors from './../store/app.selectors';
+import * as UserAction from './../store/app.actions';
+import { IUser } from './../store/app.state';
 
 @Component({
   selector: 'app-user-ngrx',
@@ -18,13 +17,13 @@ export class UserNgrxComponent implements OnInit {
   ngOnInit() {
   }
 
-  getAllData() {
-    this.display = true
-    console.log("this.store",this.store)
-    this.store.dispatch(new Actions.load());
+  getUserData()
+  {
+    this.display = true;
+    this.store.dispatch(new UserAction.load())
     this.store.select(Selectors.getAllUserData).subscribe((response) => {
-      console.log("In ts file",response)
       this.data = response
     })
   }
+ 
 }

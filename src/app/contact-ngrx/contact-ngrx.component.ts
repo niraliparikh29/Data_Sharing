@@ -1,33 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import * as Selectors from './../store/user.selector';
-import { ContactState } from '../store/user.model';
 import { ToastrService } from 'ngx-toastr';
+import { Store } from '@ngrx/store';
+import { AppState } from '../store/app.state';
 @Component({
   selector: 'app-contact-ngrx',
   templateUrl: './contact-ngrx.component.html',
   styleUrls: ['./contact-ngrx.component.css']
 })
 export class ContactNgrxComponent implements OnInit {
-  data:any;
-  isData:boolean = false
-  constructor(private store : Store<ContactState>, private toastr: ToastrService) { }
+  data: any;
+  isData: boolean = false
+  constructor(
+    private store: Store<AppState>,
+    private toastr: ToastrService) { }
 
   ngOnInit() {
-   this.getData()
+    this.getDetails()
   }
-  getData()
-  {
-    this.store.select(Selectors.contactData).subscribe((response) => {
-      if(response) {
+  getDetails() {
+    this.store.select(state => state.userData).subscribe(res => {
+      if (res) {
         this.isData = true
-        console.log("In ts file",response)
-        this.data = response
+        this.data = res['userData'];
       }
-      else
-      {
+      else {
         setTimeout(() => {
-          this.toastr.error('Something went wrong');
+          this.toastr.error("Something wrong")
         });
       }
     })
